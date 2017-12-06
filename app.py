@@ -20,10 +20,14 @@ def index():
     question = None
     answer = None
     result = {}
-
-    if question:
-        # TODO get result and answer values
-        pass
+    if request.args:
+        question = request.args.get('q')
+        if question:
+            # TODO get result and answer values
+            #print(question)
+            result = duck_answer_this(question)
+            #print(result)
+            answer = result['Answer'] or result['AbstractText'] # For example
 
     # always looks for template in 'templates' folder relative to the current folder
     return render_template('index.html', question=question, answer=answer, result=result)

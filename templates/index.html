@@ -17,6 +17,13 @@
     <body>
         <div class="content">
             <!-- TODO A form for asking the question -->
+            <form action="/" method="GET">
+                <label>
+                    <b>Ask the Duck</b>
+                    <input name="q" type="text" placeholder="Start typing..." />
+                </label>
+                <button type="submit">Send</button>
+            </form>
 
             <!-- display the answers from instant answers api -->
             <p class="response">
@@ -25,9 +32,9 @@
                     <br> <!-- <br> creates a line break -->
                     {{ answer }}
 
-                    <!-- TODO optional: also display RelatedTopics  -->
+                    <!-- TODO optional: also display RelatedTopics or anything else  -->
 
-                {% elif (question) %}
+                {% elif (question) %} {# consider -- what case is this #}
                     <b>{{ question }}</b><br>
                     I don't know :(
                 {% endif %}
