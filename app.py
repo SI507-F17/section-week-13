@@ -17,17 +17,16 @@ def duck_answer_this(question):
 
 @app.route('/')
 def index():
-    question = None
+    question = request.args.get('q')
     answer = None
     result = {}
-    if request.args:
-        question = request.args.get('q')
-        if question:
-            # TODO get result and answer values
-            #print(question)
-            result = duck_answer_this(question)
-            #print(result)
-            answer = result['Answer'] or result['AbstractText'] # For example
+
+    if question:
+        # TODO get result and answer values
+        #print(question)
+        result = duck_answer_this(question)
+        #print(result)
+        answer = result['Abstract'] or result['AbstractText'] # For example
 
     # always looks for template in 'templates' folder relative to the current folder
     return render_template('index.html', question=question, answer=answer, result=result)
