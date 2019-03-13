@@ -1,7 +1,7 @@
 # Goals
 - Flask and Jinja Template
     - Let's create a basic UI for a search box!
-- Start your final project
+
 
 # Part 1
 - Make sure you have the packages in `requirements.txt` installed
