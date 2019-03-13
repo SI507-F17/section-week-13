@@ -25,8 +25,11 @@ def index():
         #print(question)
         result = duck_answer_this(question)
         #print(result)
-        answer = result['Abstract'] or result['AbstractText'] # For example
-
+        if "Text" in result:
+            answer = result["Text"]
+        elif not answer and 'RelatedTopics' in result:
+            answer = result['RelatedTopics'][0]['Text']# for example
+        else: answer = False
     # always looks for template in 'templates' folder relative to the current folder
     return render_template('index.html', question=question, answer=answer, result=result)
 
