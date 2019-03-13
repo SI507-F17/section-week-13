@@ -22,6 +22,3 @@
       </form>
       ```
 
-# Part 2: Start your final project
-- Write code to get data from your API / Website
-- Use "dummy data" and create a visualization
