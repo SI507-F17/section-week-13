@@ -22,7 +22,6 @@ def index():
     result = {}
 
     if question:
-        # TODO get result and answer values
         #print(question)
         result = duck_answer_this(question)
         #print(result)
